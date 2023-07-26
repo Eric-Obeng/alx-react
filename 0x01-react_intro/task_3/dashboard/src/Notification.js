@@ -13,7 +13,7 @@ const Notification = () => {
     return (
         <div className='Notifications'>
             <p style={{ marginBottom: "20px", fontWeight: "bold"}}>
-                Here is the list of notifications
+                Here is the list of Notifications
             </p>
             <button 
                 style={{ position: "absolute", top: "7px", right: "7px", border: "none", background: "none", padding: "0" }}
