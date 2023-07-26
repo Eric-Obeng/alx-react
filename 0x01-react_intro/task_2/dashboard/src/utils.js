@@ -4,5 +4,11 @@ const getFooterCopy = (isIndex) => {
     return isIndex === true ? 'Holberton School' :  'Holberton School main dashboard'
 }
 
-export { getFullYear, getFooterCopy }
+const getLatestNotification = () => {
+    return (
+        `<strong>Urgent required</strong> - complete by EOD`
+    )
+}
+
+export { getFullYear, getFooterCopy, getLatestNotification }
 
