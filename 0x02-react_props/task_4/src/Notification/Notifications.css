@@ -12,3 +12,19 @@ li[data-priority="default"] {
 li[data-priority="urgent"] {
 	color: var(--holberton-red);
 }
+
+li[data-notification-type="default"] {
+	color: blue;
+}
+
+li[data-notification-type="urgent"] {
+	color: var(--holberton-red);
+}
+
+.wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: end;
+}
