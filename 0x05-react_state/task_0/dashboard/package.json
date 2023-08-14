@@ -16,9 +16,11 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/preset-env": "^7.22.10",
     "@babel/preset-react": "^7.22.5",
     "@testing-library/react": "^14.0.0",
     "babel": "^6.23.0",
+    "babel-jest": "^29.6.2",
     "chai": "^4.3.7",
     "enzyme": "^3.11.0",
     "identity-obj-proxy": "^3.0.0",
@@ -32,13 +34,11 @@
   },
   "dependencies": {
     "@babel/core": "^7.22.10",
-    "@babel/preset-env": "^7.22.10",
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "@jest/globals": "^29.6.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/user-event": "^14.4.3",
     "aphrodite": "^2.4.0",
-    "babel-jest": "^29.6.2",
     "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.8.1",
@@ -59,12 +59,19 @@
       "<rootDir>/config/setupTests.js"
     ],
     "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
-  },
-  "transform": {
-    "\\.js$": "<rootDir>/node_modules/babel-jest"
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/path/to/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "transform": {
+      "^.+\\.js?$": "babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/**/aphrodite*.{js,jsx}"
+    ]
   },
   "description": ""
 }
